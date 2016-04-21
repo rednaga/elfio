@@ -56,6 +56,9 @@ class dynamic_section_accessor
                Elf_Xword&   value,
                std::string& str ) const
     {
+        if ( !value ) {
+	    return false;
+        }
         if ( index >= get_entries_num() ) {    // Is index valid
             return false;
         }
